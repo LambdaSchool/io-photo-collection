@@ -78,9 +78,9 @@ Consider changing the collection view's section insets in the Size Inspector so 
     - `themeHelper: ThemeHelper?`
 3. Set the view controller scene's class to `PhotoDetailViewController`.
 4. Add a `UIImageView`, a `UIButton`, and a `UITextField`. Change the button's title to "Add Photo"
-5. Add a `UINavigationItem` then a `UIBarButtonItem` to the right of the navigation bar. Set its "System Item" to "Save".
+5. Add a `UIBarButtonItem` to the right of the navigation bar. Set its "System Item" to "Save".
 6. Create outlets from the image view and text field.
-7. Create an action from the "Add PHoto" button called `addPhoto`, and an action from the bar button item called `savePhoto`.
+7. Create an action from the "Add Photo" button called `addPhoto`, and an action from the bar button item called `savePhoto`.
 8. Create a "Show" segue from the "Add" bar button item in the collection view scene to this view controller. Give it an identifier.
 9. Create another "Show" segue to this view controller from the collection view cell. Give it an identifier.
 
