@@ -18,6 +18,7 @@
 		7B86CB5C28483EB100DA2B5D /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B86CB5B28483EB100DA2B5D /* PhotosCollectionViewController.swift */; };
 		7B86CB5F2848401700DA2B5D /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B86CB5E2848401700DA2B5D /* PhotosCollectionViewCell.swift */; };
 		7B86CB612848417400DA2B5D /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B86CB602848417400DA2B5D /* PhotoDetailViewController.swift */; };
+		7B86CB632848443800DA2B5D /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B86CB622848443800DA2B5D /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		7B86CB5B28483EB100DA2B5D /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		7B86CB5E2848401700DA2B5D /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		7B86CB602848417400DA2B5D /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		7B86CB622848443800DA2B5D /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				7B86CB5B28483EB100DA2B5D /* PhotosCollectionViewController.swift */,
 				7B86CB602848417400DA2B5D /* PhotoDetailViewController.swift */,
+				7B86CB622848443800DA2B5D /* ThemeSelectionViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				7B86CB5C28483EB100DA2B5D /* PhotosCollectionViewController.swift in Sources */,
 				7B86CB3D2848379E00DA2B5D /* AppDelegate.swift in Sources */,
 				7B86CB612848417400DA2B5D /* PhotoDetailViewController.swift in Sources */,
+				7B86CB632848443800DA2B5D /* ThemeSelectionViewController.swift in Sources */,
 				7B86CB3F2848379E00DA2B5D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

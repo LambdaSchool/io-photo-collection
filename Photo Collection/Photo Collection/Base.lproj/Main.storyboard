@@ -9,6 +9,85 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="J1i-c8-d1H">
+            <objects>
+                <viewController id="C7J-I7-aO8" customClass="ThemeSelectionViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vZg-Cz-wwD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the theme you would like to use:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAp-pJ-3aP">
+                                <rect key="frame" x="15" y="119" width="384" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="oEo-mX-F6b">
+                                <rect key="frame" x="57" y="398" width="300" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyZ-jv-RIW">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="FbC-M4-nN0"/>
+                                            <constraint firstAttribute="width" constant="100" id="aI1-Na-Flk"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Dark">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="selectDarkTheme:" destination="C7J-I7-aO8" eventType="touchUpInside" id="Tcq-Nf-bdN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKB-Rn-Gf6">
+                                        <rect key="frame" x="200" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="FNC-7T-CmW"/>
+                                            <constraint firstAttribute="height" constant="100" id="Zf7-lJ-RwN"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Green">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="selectGreenTheme:" destination="C7J-I7-aO8" eventType="touchUpInside" id="vgn-1q-VO5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo collection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYe-Zz-acv">
+                                <rect key="frame" x="15" y="69" width="384" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6FV-fJ-CTR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XmU-G6-r08"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nAp-pJ-3aP" firstAttribute="trailing" secondItem="bYe-Zz-acv" secondAttribute="trailing" id="44u-Hb-goK"/>
+                            <constraint firstItem="nAp-pJ-3aP" firstAttribute="leading" secondItem="bYe-Zz-acv" secondAttribute="leading" id="6g6-yv-b7L"/>
+                            <constraint firstItem="bYe-Zz-acv" firstAttribute="leading" secondItem="XmU-G6-r08" secondAttribute="leading" constant="15" id="HyH-5D-Qj8"/>
+                            <constraint firstItem="bYe-Zz-acv" firstAttribute="top" secondItem="XmU-G6-r08" secondAttribute="top" constant="25" id="J5q-Eq-kOF"/>
+                            <constraint firstItem="nAp-pJ-3aP" firstAttribute="top" secondItem="bYe-Zz-acv" secondAttribute="bottom" id="fcN-LT-dIa"/>
+                            <constraint firstItem="XmU-G6-r08" firstAttribute="trailing" secondItem="bYe-Zz-acv" secondAttribute="trailing" constant="15" id="qeU-b5-k0X"/>
+                            <constraint firstItem="oEo-mX-F6b" firstAttribute="centerX" secondItem="vZg-Cz-wwD" secondAttribute="centerX" id="rdK-mr-gD2"/>
+                            <constraint firstItem="oEo-mX-F6b" firstAttribute="centerY" secondItem="vZg-Cz-wwD" secondAttribute="centerY" id="sNu-7V-SRG"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6fS-YE-w9x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="807" y="-567"/>
+        </scene>
         <!--Photo Collection-->
         <scene sceneID="DZD-gY-rwM">
             <objects>
@@ -67,7 +146,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Photo Collection" id="QeT-qv-iLv">
-                        <barButtonItem key="leftBarButtonItem" image="paintbrush.fill" catalog="system" id="fnc-FR-pDA"/>
+                        <barButtonItem key="leftBarButtonItem" image="paintbrush.fill" catalog="system" id="fnc-FR-pDA">
+                            <connections>
+                                <segue destination="C7J-I7-aO8" kind="presentation" identifier="SelectThemeSegue" modalPresentationStyle="fullScreen" id="jyH-Aj-wQm"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7LK-iz-POv">
                             <connections>
                                 <segue destination="FCE-o1-Qd0" kind="show" identifier="AddPhotoSegue" id="src-0O-fYh"/>
@@ -159,6 +242,9 @@
         <image name="paintbrush.fill" catalog="system" width="122" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
