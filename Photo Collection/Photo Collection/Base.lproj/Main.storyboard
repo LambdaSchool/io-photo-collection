@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -56,6 +57,7 @@
                                 <connections>
                                     <outlet property="imageView" destination="M1R-Iq-Vx6" id="HdB-6b-hOC"/>
                                     <outlet property="titleLabel" destination="h1r-d4-T1B" id="z2m-Xr-lCS"/>
+                                    <segue destination="FCE-o1-Qd0" kind="show" identifier="PhotoDetailSegue" id="oeN-CO-712"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -66,7 +68,11 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Photo Collection" id="QeT-qv-iLv">
                         <barButtonItem key="leftBarButtonItem" image="paintbrush.fill" catalog="system" id="fnc-FR-pDA"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7LK-iz-POv"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7LK-iz-POv">
+                            <connections>
+                                <segue destination="FCE-o1-Qd0" kind="show" identifier="AddPhotoSegue" id="src-0O-fYh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kb-7D-Hoh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -79,6 +85,53 @@
                 </label>
             </objects>
             <point key="canvasLocation" x="807.24637681159425" y="124.55357142857142"/>
+        </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="8im-t3-FG3">
+            <objects>
+                <viewController id="FCE-o1-Qd0" customClass="PhotoDetailViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aex-lR-gow">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZYM-ad-hEL">
+                                <rect key="frame" x="46" y="184" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOf-y9-RWb">
+                                <rect key="frame" x="179" y="489" width="92" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPhotoButtonTapped:" destination="FCE-o1-Qd0" eventType="touchUpInside" id="Hcb-F1-JNi"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uWc-X0-UJd">
+                                <rect key="frame" x="128" y="386" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="beZ-1h-NZQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qSf-dR-leU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="HZq-hG-d3g">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="FCE-o1-Qd0" id="jsi-C5-Ymc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="ZYM-ad-hEL" id="oBa-S2-myu"/>
+                        <outlet property="titleTextField" destination="uWc-X0-UJd" id="qZy-5G-Zvw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H1h-yY-usY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1626" y="125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6af-tb-1jE">
@@ -99,6 +152,9 @@
             <point key="canvasLocation" x="9" y="125"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="oeN-CO-712"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="paintbrush.fill" catalog="system" width="122" height="128"/>
         <systemColor name="systemBackgroundColor">
