@@ -31,7 +31,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     func setTheme() {
         guard let themePreference = themeHelper?.themePreference else { return }
         if themePreference == "Dark" {
-            view.backgroundColor = .black
+            view.backgroundColor = .darkGray
         } else if themePreference == "Green" {
             view.backgroundColor = .systemGreen
         }

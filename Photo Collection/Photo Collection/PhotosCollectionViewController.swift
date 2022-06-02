@@ -17,17 +17,18 @@ class PhotosCollectionViewController: UICollectionViewController {
 
 //MARK: - Methods
     // Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
         setTheme()
     }
     // Applying the user's selected theme
     func setTheme() {
         guard let themePreference = themeHelper.themePreference else { return }
         if themePreference == "Dark" {
-            view.backgroundColor = .black
+            self.collectionView.backgroundColor = .darkGray
         } else if themePreference == "Green" {
-            view.backgroundColor = .systemGreen
+            self.collectionView.backgroundColor = .systemGreen
         }
     }
     
