@@ -14,7 +14,7 @@ class ThemeHelper {
     let themePreferenceKey = "ThemeKey"
     // Last theme preference set
     var themePreference: String? {
-        return UserDefaults.value(forKey: themePreferenceKey) as? String
+        return UserDefaults.standard.value(forKey: themePreferenceKey) as? String
     }
     
 //MARK: - Methods

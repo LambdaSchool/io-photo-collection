@@ -19,8 +19,9 @@ class PhotosCollectionViewController: UICollectionViewController {
     // Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTheme()
     }
-    // Implementing the user's selected theme
+    // Applying the user's selected theme
     func setTheme() {
         guard let themePreference = themeHelper.themePreference else { return }
         if themePreference == "Dark" {
