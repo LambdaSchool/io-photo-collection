@@ -89,7 +89,7 @@ extension PhotoDetailViewController: PHPickerViewControllerDelegate {
     // Presents new Photo Picker
     func presentPhotoPicker() {
         var config = PHPickerConfiguration(photoLibrary: .shared())
-        config.selectionLimit = 2
+        config.selectionLimit = 1
         config.filter = PHPickerFilter.images
         let photoPickerVC = PHPickerViewController(configuration: config)
         photoPickerVC.delegate = self
