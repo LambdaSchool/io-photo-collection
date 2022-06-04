@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Photos
+import PhotosUI
 
 class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -67,7 +69,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
 //MARK: - IBActions
     // Add photo button action
     @IBAction func addPhotoButtonTapped(_ sender: UIButton) {
-        presentImagePickerController()
+        presentPhotoPicker()
     }
     // Save bar button action
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
@@ -81,4 +83,28 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         navigationController?.popViewController(animated: true)
     }
     
+}
+
+extension PhotoDetailViewController: PHPickerViewControllerDelegate {
+    // Presents new Photo Picker
+    func presentPhotoPicker() {
+        var config = PHPickerConfiguration(photoLibrary: .shared())
+        config.selectionLimit = 2
+        config.filter = PHPickerFilter.images
+        let photoPickerVC = PHPickerViewController(configuration: config)
+        photoPickerVC.delegate = self
+        present(photoPickerVC, animated: true)
+    }
+    // Image was chose from the photo picker
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true)
+        results.forEach { result in
+            result.itemProvider.loadObject(ofClass: UIImage.self) { reading, error in
+                guard let image = reading as? UIImage, error == nil else { return }
+                DispatchQueue.main.async {
+                    self.imageView.image = image
+                }
+            }
+        }
+    }
 }
