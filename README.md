@@ -2,7 +2,7 @@
 
 A student that completes this project shows that they can:
 
-- understand and explain what a collection view is along with common scenarios for its use
+- understand /Users/sezenbozdogan/Desktop/DEVELOPMENT/ios-photo-collection/README.mdand explain what a collection view is along with common scenarios for its use
 - implement UICollectionViewDataSource methods to populate a collection view from model data
 - implement and customize basic layouts using UICollectionViewFlowLayout
 - implement custom UICollectionViewCells
@@ -27,7 +27,7 @@ Please fork and clone this repository. This repository does not have an Xcode st
 
 #### Photo
 
-1. Create a swift file called "Photo.swift". 
+1. /Users/sezenbozdogan/Desktop/DEVELOPMENT/ios-photo-collection/README.mdCreate a swift file called "Photo.swift". 
 2. Create a struct `Photo` in it with the following properties:
     - An `imageData: Data` variable.
     - A `title: String` variable. 
